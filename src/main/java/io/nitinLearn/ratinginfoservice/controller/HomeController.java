@@ -1,5 +1,7 @@
 package io.nitinLearn.ratinginfoservice.controller;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.nitinLearn.ratinginfoservice.bean.Rating;
+import io.nitinLearn.ratinginfoservice.bean.UserRating;
 import io.nitinLearn.ratinginfoservice.service.HomeService;
 
 
@@ -30,4 +33,12 @@ public class HomeController {
 
 		return homeService.getRating(movieId);
 	}
+	
+	@GetMapping(value="/users/{userId}")
+	public UserRating getUserRating(@PathVariable String userId) {
+		log.info("fetcing  rating on the basis of user "+userId);
+
+		return homeService.getUserRating(userId);
+	}
+	
 }
