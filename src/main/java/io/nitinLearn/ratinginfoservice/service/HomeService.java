@@ -24,8 +24,10 @@ public class HomeService {
 	public UserRating getUserRating(String userId) {
 		// TODO Auto-generated method stub
 		List<Rating> ratings = new ArrayList<Rating>();
-		ratings.add(new Rating("1234", 4));
-		ratings.add(new Rating("5678", 3));
+		
+		
+		//db opertaion can happen . fetch all the movies of the user and rating
+		ratings.add(new Rating("550", 3));
 		UserRating userRating = new UserRating();
 		userRating.setUserRating(ratings);
 		return userRating;
