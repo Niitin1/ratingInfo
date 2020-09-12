@@ -28,6 +28,7 @@ public class HomeService {
 		
 		//db opertaion can happen . fetch all the movies of the user and rating
 		ratings.add(new Rating("550", 3));
+		ratings.add(new Rating("350", 3));
 		UserRating userRating = new UserRating();
 		userRating.setUserRating(ratings);
 		return userRating;
